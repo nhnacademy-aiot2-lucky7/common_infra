@@ -22,8 +22,8 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.REMOTE_PORT }}
-          source: "*"
-          target: "~/nginx"
+          source: "nginx/*"
+          target: "~/"
 
 #      - name: Reload Nginx
 #        uses: appleboy/ssh-action@v1.0.0
