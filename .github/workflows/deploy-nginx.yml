@@ -22,8 +22,8 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.REMOTE_PORT }}
-          source: "nginx/"
-          target: "/etc/nginx/sites-available/"
+          source: "nginx/*"
+          target: "/home/ubuntu/frontend-dist"
 
       - name: Reload Nginx
         uses: appleboy/ssh-action@v1.0.0
