@@ -23,14 +23,14 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.REMOTE_PORT }}
           source: "nginx/*"
-          target: "/home/aiot2-team1/frontend-dist"
+          target: "/frontend-dist"
 
-      - name: Reload Nginx
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.REMOTE_PORT }}
-          script: |
-            sudo nginx -t && sudo systemctl reload nginx
+#      - name: Reload Nginx
+#        uses: appleboy/ssh-action@v1.0.0
+#        with:
+#          host: ${{ secrets.REMOTE_HOST }}
+#          username: ${{ secrets.REMOTE_USER }}
+#          key: ${{ secrets.SSH_PRIVATE_KEY }}
+#          port: ${{ secrets.REMOTE_PORT }}
+#          script: |
+#            sudo nginx -t && sudo systemctl reload nginx
