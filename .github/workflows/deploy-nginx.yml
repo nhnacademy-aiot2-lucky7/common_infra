@@ -23,7 +23,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.REMOTE_PORT }}
           source: "nginx/*"
-          target: "/home/ubuntu/frontend-dist"
+          target: "/home/aiot2-team1/frontend-dist"
 
       - name: Reload Nginx
         uses: appleboy/ssh-action@v1.0.0
