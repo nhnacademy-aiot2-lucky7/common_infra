@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'nginx/**'
+      - 'startup/**'
       - '.github/workflows/**'
 
 jobs:
@@ -15,12 +15,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Copy nginx configs to server
+      - name: Copy startup configs to server
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.REMOTE_PORT }}
-          source: "nginx/*"
+          source: "startup/*"
           target: "~/"
