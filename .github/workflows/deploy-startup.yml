@@ -24,3 +24,12 @@ jobs:
           port: ${{ secrets.REMOTE_PORT }}
           source: "startup/*"
           target: "~/"
+
+      - name: Set execute permission on startup.sh
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.REMOTE_PORT }}
+          script: chmod 755 startup/*.sh
