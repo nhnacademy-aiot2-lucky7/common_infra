@@ -1,48 +1,37 @@
 version: '3.8'
 
 services:
-
   node-red:
     image: nodered/node-red:latest
     container_name: aiot2-team1-node-red
     ports:
-      - "10236:1880"  # 외부 10236 → 내부 1880
-    volumes:
-      - ./node_red_data:/data
+      - "10236:1880"
     restart: unless-stopped
 
   prometheus:
     image: prom/prometheus:latest
     container_name: aiot2-team1-prometheus
     ports:
-      - "10237:9090"  # 외부 10237 → 내부 9090
-    volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - "10237:9090"
     restart: unless-stopped
 
   grafana:
     image: grafana/grafana:latest
     container_name: aiot2-team1-grafana
     ports:
-      - "10238:3000"  # 외부 10238 → 내부 3000
-    volumes:
-      - ./my_group_data/grafana:/var/lib/grafana  # 외부 폴더를 /var/lib/grafana로 매핑
+      - "10238:3000"
     restart: unless-stopped
 
   telegraf:
     image: telegraf:latest
     container_name: telegraf
-    volumes:
-      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
-    network_mode: "host"  # Telegraf는 보통 host 모드로 사용
+    network_mode: "host"
     restart: unless-stopped
 
   redis:
     image: redis:latest
     container_name: aiot2-team1-redis
     ports:
-      - "10240:6379"  # 외부 10240 → 내부 6379
-    volumes:
-      - ./redis_data:/data
+      - "10240:6379"
     command: redis-server --appendonly yes
     restart: unless-stopped
