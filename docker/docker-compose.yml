@@ -4,7 +4,7 @@ services:
 
   node-red:
     image: nodered/node-red:3.1.9
-    container_name: node-red
+    container_name: aiot2-team1-node-red
     ports:
       - "10236:1880"  # 외부 10236 → 내부 1880
     volumes:
@@ -13,7 +13,7 @@ services:
 
   prometheus:
     image: prom/prometheus:v2.51.2
-    container_name: prometheus
+    container_name: aiot2-team1-prometheus
     ports:
       - "10237:9090"  # 외부 10237 → 내부 9090
     volumes:
@@ -22,7 +22,7 @@ services:
 
   grafana:
     image: grafana/grafana:10.2.3
-    container_name: grafana
+    container_name: aiot2-team1-grafana
     ports:
       - "10238:3000"  # 외부 10238 → 내부 3000
     volumes:
@@ -39,7 +39,7 @@ services:
 
   redis:
     image: redis:7.2.4
-    container_name: redis
+    container_name: aiot2-team1-redis
     ports:
       - "10240:6379"  # 외부 10240 → 내부 6379
     volumes:
