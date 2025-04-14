@@ -26,7 +26,7 @@ services:
     ports:
       - "10238:3000"  # 외부 10238 → 내부 3000
     volumes:
-      - ./grafana_data:/var/lib/grafana
+      - ./my_group_data/grafana:/var/lib/grafana  # 외부 폴더를 /var/lib/grafana로 매핑
     restart: unless-stopped
 
   telegraf:
