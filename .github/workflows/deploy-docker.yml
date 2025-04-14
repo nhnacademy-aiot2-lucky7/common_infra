@@ -26,7 +26,7 @@ jobs:
           target: "~/"  # 서버에 저장할 경로
 
       - name: SSH into server and restart containers
-        uses: appleboy/ssh-action@v0.1.4
+        uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{ secrets.REMOTE_HOST }}  # 원격 서버 주소
           username: ${{ secrets.REMOTE_USER }}  # 원격 서버 사용자명
