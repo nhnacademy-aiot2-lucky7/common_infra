@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - 'nginx/**'
-      - '.github/workflows/**'
+      - '.github/workflows/deploy-nginx.yml'
 
 jobs:
   deploy:

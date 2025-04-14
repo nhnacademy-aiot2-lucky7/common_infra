@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - 'startup/**'
-      - '.github/workflows/**'
+      - '.github/workflows/deploy-startup.yml'
 
 jobs:
   deploy:
